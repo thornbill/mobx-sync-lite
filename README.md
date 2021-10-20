@@ -64,7 +64,7 @@ trunk.init().then(() => {
 
 ## Full Example
 
-You can see it at [example](example/index.tsx)
+You can see it at [example](example/src/index.tsx)
 
 ## API Reference
 
