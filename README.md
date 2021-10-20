@@ -1,6 +1,6 @@
-# mobx-sync
+# mobx-sync-lite
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Facrazing%2Fmobx-sync.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Facrazing%2Fmobx-sync?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite?ref=badge_shield)
 
 A library use JSON to persist your MobX stores with version control.
 
@@ -16,16 +16,16 @@ A library use JSON to persist your MobX stores with version control.
 
 ```bash
 # by yarn
-yarn add mobx-sync
+yarn add mobx-sync-lite
 
 # OR by npm
-npm i -S mobx-sync
+npm i -S mobx-sync-lite
 ```
 
 ## Quick Start
 
 ```typescript jsx
-import { AsyncTrunk, date } from 'mobx-sync';
+import { AsyncTrunk, date } from 'mobx-sync-lite';
 import { observable } from 'mobx';
 
 class Store {
@@ -39,7 +39,7 @@ class Store {
 
 const store = new Store();
 
-// create a mobx-sync instance, it will:
+// create a mobx-sync-lite instance, it will:
 // 1. load your state from localStorage & ssr rendered state
 // 2. persist your store to localStorage automatically
 // NOTE: you do not need to call `trunk.updateStore` to persist
@@ -88,7 +88,7 @@ The persisted string value of `foo` thus become illegal, and should be ignored.
 It is necessary to use `@version` to mark the `foo` field with a new version to omit it:
 
 ```typescript jsx
-import { version } from 'mobx-sync';
+import { version } from 'mobx-sync-lite';
 import { observable } from 'mobx';
 
 class Store {
@@ -118,7 +118,7 @@ you couldn't know the version of persisted in client.**
 class will be ignored if its version is different. For example:
 
 ```typescript jsx
-import { version } from 'mobx-sync';
+import { version } from 'mobx-sync-lite';
 import { observable } from 'mobx';
 
 @version(1)
@@ -163,7 +163,7 @@ For example: if we want to ignore the `date` field in Quick Start, we just need 
 use `@ignore` to decorate it:
 
 ```typescript jsx
-import { date, ignore } from 'mobx-sync';
+import { date, ignore } from 'mobx-sync-lite';
 import { observable } from 'mobx';
 
 class Store {
@@ -208,7 +208,7 @@ Sometimes, your store node is not a pure object, just like `Set`, `Map`,
 For example, we use `Set<Date>` as a field:
 
 ```typescript jsx
-import { format } from 'mobx-sync';
+import { format } from 'mobx-sync-lite';
 import { observable } from 'mobx';
 
 class Store {
@@ -265,11 +265,11 @@ function regexp(target: any, key: string): void;
 ### SSR
 
 Sometimes, we hope to use MobX in SSR(Server-Side Rendering), there is no
-standard way to stringify/load mobx store to/from html template, mobx-sync
+standard way to stringify/load mobx store to/from html template, mobx-sync-lite
 maybe one.
 
 At first, you need to call `config({ ssr: true })` before call any decorator
-of mobx-sync. And then, you can use `JSON.stringify` to stringify your state
+of mobx-sync-lite. And then, you can use `JSON.stringify` to stringify your state
 to html template, and then use `trunk.init` or `parseStore` to load it to
 your store.
 
@@ -277,7 +277,7 @@ For example:
 
 ```typescript jsx
 // store.ts
-import { ignore } from 'mobx-sync'
+import { ignore } from 'mobx-sync-lite'
 import { observable } from 'mobx'
 
 export Store {
@@ -290,7 +290,7 @@ export Store {
 
 ```typescript jsx
 // server.ts
-import { config } from 'mobx-sync';
+import { config } from 'mobx-sync-lite';
 
 config({ ssr: true });
 
@@ -314,7 +314,7 @@ app.get('/', (_, res) => {
 
 ```typescript jsx
 // client.ts
-import { AsyncTrunk } from 'mobx-sync';
+import { AsyncTrunk } from 'mobx-sync-lite';
 import { Store } from './store';
 
 const store = new Store();
@@ -326,14 +326,14 @@ trunk.init(__INITIAL_STATE__).then(() => {
 ```
 
 **NOTE: if you do not want to use a trunk to persist/load state from
-localStorage, just want to use mobx-sync to load SSR state, you can use
+localStorage, just want to use mobx-sync-lite to load SSR state, you can use
 `parseStore(store, state, true)` to load it.**
 
 For example:
 
 ```typescript jsx
 // client.ts
-import { parseStore } from 'mobx-sync';
+import { parseStore } from 'mobx-sync-lite';
 import { Store } from './store';
 
 const store = new Store();
@@ -462,7 +462,9 @@ class SyncTrunk {
 ```markdown
 The MIT License (MIT)
 
-Copyright (c) 2016 acrazing
+Copyright (c) 2021 thornbill
+
+Copyright (c) 2016-2020 acrazing
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -482,5 +484,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Facrazing%2Fmobx-sync.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Facrazing%2Fmobx-sync?ref=badge_large)

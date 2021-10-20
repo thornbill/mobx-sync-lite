@@ -1,10 +1,10 @@
 {
-  "name": "mobx-sync",
+  "name": "mobx-sync-lite",
   "version": "3.0.0",
   "description": "A library to persist your mobx stores.",
-  "author": "acrazing <joking.young@gmail.com>",
-  "main": "dist/mobx-sync.cjs.js",
-  "module": "dist/mobx-sync.esm.js",
+  "author": "thornbill <bill@thornbill.dev>",
+  "main": "dist/mobx-sync-lite.cjs.js",
+  "module": "dist/mobx-sync-lite.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "src/",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acrazing/mobx-sync.git"
+    "url": "git+https://github.com/thornbill/mobx-sync-lite.git"
   },
   "license": "MIT",
   "devDependencies": {
@@ -43,7 +43,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "mobx": "*"
+    "mobx": "5.x"
   },
   "husky": {
     "hooks": {
