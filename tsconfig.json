@@ -41,5 +41,6 @@
     "tsBuildInfoFile": ".cache/ts.json",
     "allowUmdGlobalAccess": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/__tests__", "**/*.spec.ts", "**/*.test.ts"]
 }
