@@ -4,7 +4,7 @@
  */
 
 import { observable } from 'mobx';
-import { date, ignore, version } from 'mobx-sync';
+import { date, ignore, version } from 'mobx-sync-lite';
 import { UserStore } from './user';
 
 export class ArticleStore {

@@ -4,11 +4,11 @@
  */
 
 import localforage from 'localforage';
-import { AsyncTrunk } from 'mobx-sync';
+import { AsyncTrunk } from 'mobx-sync-lite';
 import * as React from 'react';
 import { render } from 'react-dom';
-import { App } from './App';
-import { store } from './store';
+import { App } from '../shared/App';
+import { store } from '../shared/store';
 
 /**
  * the initial state injected by SSR
@@ -41,6 +41,7 @@ const trunk = new AsyncTrunk(store, {
  * @desc load persisted stores
  */
 trunk.init(__INITIAL_STATE__).then(() => {
+  console.log('store loaded');
   /**
    * @desc do any staff with the loaded store,
    * and any changes now will be persisted
@@ -49,4 +50,5 @@ trunk.init(__INITIAL_STATE__).then(() => {
   store.storeLoaded = true;
 });
 
-render(<App />, document.getElementById('root'));
+const root = document.getElementById('root');
+render(<App />, root);

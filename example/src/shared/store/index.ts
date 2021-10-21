@@ -3,7 +3,8 @@
  * @since 2018-09-08 11:08:05
  */
 
-import { ignore } from 'mobx-sync';
+import { observable } from 'mobx';
+import { ignore } from 'mobx-sync-lite';
 import { user } from './user';
 import { article } from './article';
 
@@ -13,8 +14,14 @@ export class RootStore {
    * will not trigger persist event.
    * @type {boolean}
    */
-  @ignore storeLoaded = false;
+  @ignore
+  @observable
+  storeLoaded = false;
+
+  @observable
   article = article;
+
+  @observable
   user = user;
 }
 
