@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "target": "es2015",
+    "module": "commonjs"
+  },
+  "include": [".", "../shared"]
+}

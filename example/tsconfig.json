@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -10,5 +11,6 @@
     "jsx": "react",
     "experimentalDecorators": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "src/server/" }]
 }
