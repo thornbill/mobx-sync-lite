@@ -2,11 +2,12 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite?ref=badge_shield)
 
-A library use JSON to persist your MobX stores with version control.
+mobx-sync-lite is a library that uses JSON to persist your MobX stores with version control.
+It is a fork of [mobx-sync](https://github.com/acrazing/mobx-sync) with the goal of supporting current versions of MobX.
 
 ## Features
 
-- use `JSON.stringify/JSON.parse` as the deserialize/serialize method
+- use `JSON.stringify`/`JSON.parse` as the deserialize/serialize method
 - version control by using `@version` decorator
 - ignore any store node by using `@ignore` decorator
 - support React Native
