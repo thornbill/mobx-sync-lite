@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^13.0.0",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^27.0.2",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.10",
