@@ -1,0 +1,53 @@
+name: Code quality
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  typescript:
+    name: TypeScript Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2.3.5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 14
+          check-latest: true
+          cache: yarn
+
+      - name: Install Node.js dependencies
+        run: yarn install
+
+      - name: Run TypeScript build
+        run: npx tsc --noEmit --incremental false --tsBuildInfoFile null
+
+  jest:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2.3.5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 14
+          check-latest: true
+          cache: yarn
+
+      - name: Install Node.js dependencies
+        run: yarn install
+
+      - name: Run jest
+        run: npx jest --coverage
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v2.1.0
