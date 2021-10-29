@@ -15,7 +15,8 @@
     "bundle": "rollup --config rollup.config.ts",
     "build": "run-s clean bundle",
     "test": "jest",
-    "prepublishOnly": "run-s test build"
+    "prepublishOnly": "run-s test build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@types/jest": "^27.0.2",
-    "husky": "^4.2.5",
+    "husky": "^7.0.4",
     "jest": "^26.0.1",
     "lint-staged": "^11.2.6",
     "mobx": "^5.10.1",
@@ -44,11 +45,6 @@
   },
   "peerDependencies": {
     "mobx": "5.x"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,less,scss,md}": [
