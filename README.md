@@ -1,6 +1,13 @@
-# mobx-sync-lite
+<h1 align="center">mobx-sync-lite</h1>
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthornbill%2Fmobx-sync-lite?ref=badge_shield)
+<p align="center">
+<a href="https://github.com/thornbill/mobx-sync-lite/blob/master/LICENSE"><img alt="MPL-2.0 license" src="https://img.shields.io/github/license/thornbill/mobx-sync-lite"></a>
+<a href="https://github.com/thornbill/mobx-sync-lite/releases"><img alt="Current Release" src="https://img.shields.io/github/release/thornbill/mobx-sync-lite.svg"/></a>
+<a href="https://www.npmjs.com/package/mobx-sync-lite"><img alt="npm" src="https://img.shields.io/npm/v/mobx-sync-lite"></a>
+<a href="https://codecov.io/gh/thornbill/mobx-sync-lite">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/thornbill/mobx-sync-lite?token=Wk8RS9tDnb">
+</a>
+</p>
 
 mobx-sync-lite is a library that uses JSON to persist your MobX stores with version control.
 It is a fork of [mobx-sync](https://github.com/acrazing/mobx-sync) with the goal of supporting current versions of MobX.
@@ -12,6 +19,12 @@ It is a fork of [mobx-sync](https://github.com/acrazing/mobx-sync) with the goal
 - ignore any store node by using `@ignore` decorator
 - support React Native
 - support server side rendering (SSR)
+
+## Compatibility
+
+| mobx-sync-lite | mobx |
+| :------------: | :--: |
+|      3.x       | 5.x  |
 
 ## Install
 
