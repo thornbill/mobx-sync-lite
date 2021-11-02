@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "dist/client/index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "build:client": "rollup --config rollup.config.ts",
     "build:server": "tsc -p src/server --outDir dist",
-    "build": "yarn build:client && yarn build:server",
+    "build": "npm run build:client && npm run build:server",
     "start": "node dist/server/index.js"
   },
   "dependencies": {
