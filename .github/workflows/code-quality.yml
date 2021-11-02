@@ -20,10 +20,10 @@ jobs:
         with:
           node-version: 14
           check-latest: true
-          cache: yarn
+          cache: npm
 
       - name: Install Node.js dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Run TypeScript build
         run: npx tsc --noEmit --incremental false --tsBuildInfoFile null
@@ -41,13 +41,13 @@ jobs:
         with:
           node-version: 14
           check-latest: true
-          cache: yarn
+          cache: npm
 
       - name: Install Node.js dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Run Rollup build
-        run: yarn build
+        run: npm run build
 
   jest:
     name: Test
@@ -62,10 +62,10 @@ jobs:
         with:
           node-version: 14
           check-latest: true
-          cache: yarn
+          cache: npm
 
       - name: Install Node.js dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Run jest
         run: npx jest --coverage
