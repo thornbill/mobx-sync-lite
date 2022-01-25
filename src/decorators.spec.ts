@@ -1,11 +1,11 @@
 import * as assert from 'assert';
 import { observable } from 'mobx';
-import { nonenumerable } from 'monofile-utilities/lib/nonenumerable';
 import { config } from './config';
 import { date, ignore, regexp, version } from './decorators';
 import { KeyNodeVersion, KeyVersions } from './keys';
 import { parseStore } from './parse-store';
 import { toJSON } from './utils';
+import nonenumerable from './utils/nonenumerable';
 
 describe('decorator:format', () => {
   it('format date/regexp', () => {
