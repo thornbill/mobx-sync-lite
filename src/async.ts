@@ -2,7 +2,7 @@ import { autorun, IReactionDisposer } from 'mobx';
 import { KeyActionName, KeyDefaultKey } from './keys';
 import { parseStore } from './parse-store';
 import { SyncStorage } from './sync';
-import { noop } from './utils/internal';
+import noop from './utils/noop';
 
 /**
  * The async storage API

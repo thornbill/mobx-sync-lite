@@ -1,7 +1,7 @@
 import { autorun, IReactionDisposer } from 'mobx';
 import { KeyActionName, KeyDefaultKey } from './keys';
 import { parseStore } from './parse-store';
-import { noop } from './utils/internal';
+import noop from './utils/noop';
 
 export interface SyncStorage {
   getItem(key: string): string | null;
