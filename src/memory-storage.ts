@@ -1,9 +1,8 @@
-import { SMap } from 'monofile-utilities/lib/map';
 import * as util from 'util';
 import { SyncStorage } from './sync';
 
 export class MemoryStorage implements SyncStorage {
-  private data: SMap<string> = {};
+  private data: Record<string, string> = {};
 
   constructor(public debug = false) {}
 
