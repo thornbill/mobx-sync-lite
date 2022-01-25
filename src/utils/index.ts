@@ -1,3 +1,7 @@
+/**
+ * Publicly exported utility functions
+ */
+
 export function isPrimitive(value: any) {
   if (value === void 0 || value === null) {
     return true;
