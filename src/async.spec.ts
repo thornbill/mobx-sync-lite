@@ -1,13 +1,3 @@
-/*!
- *
- * Copyright 2017 - acrazing
- *
- * @author acrazing joking.young@gmail.com
- * @since 2017-11-28 18:39:59
- * @version 1.0.0
- * @desc example.ts
- */
-
 import * as assert from 'assert';
 import { observable } from 'mobx';
 import { sleep } from 'monofile-utilities/lib/sleep';
@@ -162,7 +152,10 @@ describe('async trunk', () => {
     store.list.push({ a: '3', b: '4' });
     await sleep(100);
     assert.deepStrictEqual(JSON.parse(storage.getItem('key')!), {
-      list: [{ a: '1', b: '2' }, { a: '3', b: '4' }],
+      list: [
+        { a: '1', b: '2' },
+        { a: '3', b: '4' },
+      ],
     });
     store.list = [];
     await sleep(100);

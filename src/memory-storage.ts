@@ -1,13 +1,3 @@
-/*!
- *
- * Copyright 2018 - acrazing
- *
- * @author acrazing joking.young@gmail.com
- * @since 2018-02-04 17:27:30
- * @version 1.0.0
- * @desc memory-storage.ts
- */
-
 import { SMap } from 'monofile-utilities/lib/map';
 import * as util from 'util';
 import { SyncStorage } from './sync';

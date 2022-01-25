@@ -1,13 +1,3 @@
-/*!
- *
- * Copyright 2017 - acrazing
- *
- * @author acrazing joking.young@gmail.com
- * @since 2017-11-28 17:31:44
- * @version 1.0.0
- * @desc sync.ts
- */
-
 import { autorun, IReactionDisposer } from 'mobx';
 import { noop } from 'monofile-utilities/lib/consts';
 import { KeyActionName, KeyDefaultKey } from './keys';

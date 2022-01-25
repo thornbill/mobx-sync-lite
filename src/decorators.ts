@@ -1,8 +1,3 @@
-/*!
- * Copyright 2018 acrazing <joking.young@gmail.com>. All rights reserved.
- * @since 2018-06-27 00:25:38
- */
-
 import { __assign } from 'tslib';
 import { options } from './config';
 import { inject } from './inject';
