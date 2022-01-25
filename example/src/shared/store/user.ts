@@ -1,8 +1,3 @@
-/*!
- * Copyright 2018 acrazing <joking.young@gmail.com>. All rights reserved.
- * @since 2018-09-08 10:46:07
- */
-
 import { observable } from 'mobx';
 import { version } from 'mobx-sync-lite';
 

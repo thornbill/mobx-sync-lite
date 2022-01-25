@@ -1,8 +1,3 @@
-/*!
- * Copyright 2018 acrazing <joking.young@gmail.com>. All rights reserved.
- * @since 2018-12-15 15:35:02
- */
-
 import { __assign } from 'tslib';
 
 export const options = {

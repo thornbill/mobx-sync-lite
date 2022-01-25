@@ -1,7 +1,3 @@
-/*!
- * Copyright 2020 acrazing <joking.young@gmail.com>. All rights reserved.
- * @since 2020-06-15 20:08:47
- */
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';

@@ -1,13 +1,3 @@
-/*!
- *
- * Copyright 2018 - acrazing
- *
- * @author acrazing joking.young@gmail.com
- * @since 2018-01-06 12:24:06
- * @version 1.0.0
- * @desc parse-store.ts
- */
-
 import { action, isObservableArray, isObservableMap, observable } from 'mobx';
 import { KeyFormat, KeyNodeVersion, KeyVersions } from './keys';
 import { isPrimitive } from './utils';
@@ -21,10 +11,8 @@ let parseStore = (store: any, data: any, isFromServer: boolean) => {
   const storeVersions = store[KeyVersions] || {};
   const deserializers = store[KeyFormat] || {};
   // version control for node
-  if ((KeyNodeVersion in dataVersions)
-    || (KeyNodeVersion in storeVersions)) {
-    if (dataVersions[KeyNodeVersion]
-      !== storeVersions[KeyNodeVersion]) {
+  if (KeyNodeVersion in dataVersions || KeyNodeVersion in storeVersions) {
+    if (dataVersions[KeyNodeVersion] !== storeVersions[KeyNodeVersion]) {
       return;
     }
   }
@@ -53,24 +41,19 @@ let parseStore = (store: any, data: any, isFromServer: boolean) => {
       const dataValue = data[key];
       if (deserializers[key] && deserializers[key].deserializer) {
         store[key] = deserializers[key].deserializer(dataValue, storeValue);
-      }
-      else if (isObservableArray(storeValue)) {
+      } else if (isObservableArray(storeValue)) {
         // mobx array
         store[key] = observable.array(dataValue);
-      }
-      else if (isObservableMap(storeValue)) {
+      } else if (isObservableMap(storeValue)) {
         // mobx map
         store[key] = observable.map(dataValue);
-      }
-      else if (isPrimitive(dataValue)) {
+      } else if (isPrimitive(dataValue)) {
         // js/mobx primitive objects
         store[key] = dataValue;
-      }
-      else if (!storeValue) {
+      } else if (!storeValue) {
         // if store value is empty, assign persisted data to it directly
         store[key] = dataValue;
-      }
-      else {
+      } else {
         // nested pure js object or mobx observable object
         parseStore(storeValue, dataValue, isFromServer);
       }

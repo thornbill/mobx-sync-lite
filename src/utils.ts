@@ -1,9 +1,4 @@
-/*!
- * Copyright 2018 acrazing <joking.young@gmail.com>. All rights reserved.
- * @since 2018-06-27 00:21:42
- */
-
-export function isPrimitive (value: any) {
+export function isPrimitive(value: any) {
   if (value === void 0 || value === null) {
     return true;
   }
@@ -11,7 +6,7 @@ export function isPrimitive (value: any) {
   return type === 'string' || type === 'number' || type === 'boolean';
 }
 
-export function toJSON (data: any, recursive = true) {
+export function toJSON(data: any, recursive = true) {
   if (recursive) {
     const str = JSON.stringify(data);
     if (str === void 0) {
@@ -26,7 +21,7 @@ export function toJSON (data: any, recursive = true) {
 }
 
 // TODO support es5 browsers
-export function parseCycle (
+export function parseCycle(
   input: object,
   map = new Map<object, string[]>(),
   prefix = '',
@@ -45,8 +40,7 @@ export function parseCycle (
     if (!map.has(item[1])) {
       map.set(item[1], [subPrefix]);
       parseCycle(item[1], map, subPrefix);
-    }
-    else {
+    } else {
       (map.get(item[1]) as string[]).push(subPrefix);
     }
   }
