@@ -1,8 +1,8 @@
 import { autorun, IReactionDisposer } from 'mobx';
-import { noop } from 'monofile-utilities/lib/consts';
 import { KeyActionName, KeyDefaultKey } from './keys';
 import { parseStore } from './parse-store';
 import { SyncStorage } from './sync';
+import noop from './utils/noop';
 
 /**
  * The async storage API

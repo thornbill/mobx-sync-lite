@@ -1,11 +1,17 @@
 import * as assert from 'assert';
 import { observable } from 'mobx';
-import { sleep } from 'monofile-utilities/lib/sleep';
 import { AsyncTrunk } from './async';
 import { ignore, version } from './decorators';
 import { KeyNodeVersion, KeyVersions } from './keys';
 import { MemoryStorage } from './memory-storage';
 import { toJSON } from './utils';
+
+const sleep = (time: number) =>
+  new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
 
 @version(4)
 class N1 {
