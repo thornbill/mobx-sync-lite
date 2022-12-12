@@ -25,7 +25,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-commonjs": "^23.0.4",
     "@types/jest": "^27.0.2",
     "husky": "^7.0.4",
     "jest": "^26.0.1",
